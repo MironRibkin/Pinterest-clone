@@ -1,0 +1,25 @@
+{
+  "name": "pinterest-clone",
+  "version": "1.0.0",
+  "description": "pinterest-clone",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MironRibkin/Pinterest-clone.git"
+  },
+  "author": "Miron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MironRibkin/Pinterest-clone/issues"
+  },
+  "homepage": "https://github.com/MironRibkin/Pinterest-clone#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^1.7.2"
+  }
+}
