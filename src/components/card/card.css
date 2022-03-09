@@ -1,8 +1,3 @@
-body {
-   display: flex;
-   gap: 20px;
-   flex-wrap: wrap;
-}
 
 .card {
 max-width: 260px;
@@ -11,15 +6,13 @@ height: 350px;
 }
 
 .card__image {
-position: relative;
-background: url(/Pinterest-clone/src/components/card/image/b2cab7c945418108cbc0d5e5ace7e3a1.jpg);
-width: 100%;
-height: 100%;
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-border-radius: 20px;
-cursor: zoom-in;
+   position: relative;
+   background: url("image/b2cab7c945418108cbc0d5e5ace7e3a1.jpg") no-repeat center;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   border-radius: 20px;
+   cursor: zoom-in;
 }
 
 .card__image:hover::after {
@@ -35,7 +28,7 @@ cursor: zoom-in;
    display: none;
    width: 50%;
    min-height: 48px;
-   border: 1px solid #e60023;
+   border: none;
    border-radius: 40px;
    background-color: #e60023;
    color:#FFFF;
@@ -50,6 +43,10 @@ cursor: zoom-in;
 
 .card__button-add--hidden:focus {
    background-color: #a3081a;
+}
+
+.card__button-add--hidden:active {
+   transition: all 0.3s linear;
 }
 
 .card__image:hover .card__button-add--hidden{
@@ -68,6 +65,7 @@ cursor: zoom-in;
    background-color: #ddd;
    width: 30px;
    height: 30px;
+   opacity: 0.8;
    cursor: pointer;
    transition: all 0.15s linear;
 }
@@ -78,10 +76,11 @@ cursor: zoom-in;
 
 .card__button-add-complain--hidden:focus {
    background-color: #efefef;
+   opacity: 1; 
+   transform: scale(0.9166);
 }
 
 .card__image:hover .card__button-add-complain--hidden {
-   display: block;
    z-index: 1;
    display: flex;
    justify-content: center;
