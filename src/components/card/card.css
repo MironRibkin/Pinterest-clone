@@ -1,92 +1,97 @@
-
 .card {
-max-width: 260px;
-width: 100%;
-height: 350px;
+    max-width: 260px;
+    width: 100%;
+    height: 350px;
+    top: 20%;
 }
 
 .card__image {
-   position: relative;
-   background: url("image/b2cab7c945418108cbc0d5e5ace7e3a1.jpg") no-repeat center;
-   width: 100%;
-   height: 100%;
-   background-size: cover;
-   border-radius: 20px;
-   cursor: zoom-in;
+    position: relative;
+    background: url("image/b2cab7c945418108cbc0d5e5ace7e3a1.jpg") no-repeat center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 20px;
+    cursor: zoom-in;
 }
 
 .card__image:hover::after {
-   content: "";
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   background-color:  rgba(0,0,0,.5); 
-   border-radius: 20px;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 20px;
 }
 
 .card__button-add--hidden {
-   display: none;
-   width: 50%;
-   min-height: 48px;
-   border: none;
-   border-radius: 40px;
-   background-color: #e60023;
-   color:#FFFF;
-   font-size: 14px;
-   cursor: pointer;
-   transition: all 0.15s linear;
+    display: none;
+    width: 50%;
+    min-height: 48px;
+    border: none;
+    border-radius: 40px;
+    background-color: #e60023;
+    color: #FFFF;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s linear;
 }
 
 .card__button-add--hidden:hover {
-   background-color: #ad081b;
+    background-color: #ad081b;
 }
 
 .card__button-add--hidden:focus {
-   background-color: #a3081a;
+    background-color: #a3081a;
+}
+
+.card__image:hover .card__button-add--hidden:active {
+    transform: translate(-50%, -50%) scale(0.91666);
 }
 
 .card__button-add--hidden:active {
-   transition: all 0.3s linear;
+    transition: all 0.3s linear;
 }
 
-.card__image:hover .card__button-add--hidden{
-   display: block;
-   z-index: 1;
-   position: absolute;
-   transform: translate(-50%,-50%);
-   left: 69%;
-   top: 10%;
+.card__image:hover .card__button-add--hidden {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 69%;
+    top: 10%;
 }
 
 .card__button-add-complain--hidden {
-   display: none;
-   border: 1px solid #ddd;
-   border-radius: 50%;
-   background-color: #ddd;
-   width: 30px;
-   height: 30px;
-   opacity: 0.8;
-   cursor: pointer;
-   transition: all 0.15s linear;
+    display: none;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background-color: #ddd;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.15s linear;
 }
 
 .card__button-add-complain--hidden:hover {
-   background-color: #efefef;
+    background-color: #fff;
 }
 
-.card__button-add-complain--hidden:focus {
-   background-color: #efefef;
-   opacity: 1; 
-   transform: scale(0.9166);
+.card__button-add-complain--hidden:active {
+    background-color: #efefef;
+    opacity: 1;
+    transform: scale(0.9166);
 }
 
 .card__image:hover .card__button-add-complain--hidden {
-   z-index: 1;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: absolute;
-   left: 82%;
-   top: 88%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 82%;
+    top: 88%;
 }
 
