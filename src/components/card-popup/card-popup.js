@@ -3,32 +3,25 @@
 // ====================Появление модального окна ЖАЛОБА
 
 const modal = document.getElementById("modal-window");
-const btn = document.getElementById("btn-popup-comlpain");
-const closed = document.getElementById("popup-comlpain__close");
+const btn = document.getElementById("btn-popup-complain");
+const closed = document.getElementById("popup-complain__close");
 
 btn.onclick = function () {
    modal.style.display = "block";
    unckeckAllRadio();
-   checkAllRadio();
-   
+   checkAllRadio();  
 }
 
 closed.onclick = function () {
    modal.style.display = "none";
    unckeckAllRadio();
-  
-   
-
-
-
 }
 
 window.onclick = function (event) {
    if (event.target == modal) {
-       modal.style.display = "none";
-       unckeckAllRadio();
+      modal.style.display = "none";
+      unckeckAllRadio();
    }
-
 }
 
 
@@ -38,7 +31,7 @@ function unckeckAllRadio(){
       element.checked = false;
    });
    btn_next.classList.add('disabled');
-   btn_next.classList.remove('popup-comlpain__next');
+   btn_next.classList.remove('popup-complain__next');
 }
 
 
@@ -46,26 +39,20 @@ function unckeckAllRadio(){
 
 
 // =====Активация кнопки ДАЛЕЕ в модальном окне ЖАЛОБА
-const btn_next = document.getElementById('popup-comlpain__next');
+const btn_next = document.getElementById('popup-complain__next');
 // btn_next.disabled;
-const btn_radio = document.querySelectorAll('.popup-comlpain__list-radio');
+const btn_radio = document.querySelectorAll('.popup-complain__list-radio');
 
 function checkAllRadio(){
 btn_radio.forEach((element) => {
    element.addEventListener('click', () => {
-       let count = document.querySelectorAll('input:checked').length;
-       if (count === 1) { 
-      btn_next.classList.add('popup-comlpain__next');
-       btn_next.classList.remove('disabled');
+      let count = document.querySelectorAll('input:checked').length;
+      if (count === 1) { 
+      btn_next.classList.add('popup-complain__next');
+      btn_next.classList.remove('disabled');
       } 
-       
    })
 });
-
 };
 
-
-
-
-// ============================================================
 

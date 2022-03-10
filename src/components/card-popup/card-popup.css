@@ -6,44 +6,36 @@
 .modal-window{
     display: none;
     position: fixed;
-    z-index: 1;
+    /* z-index: 1; */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.8);
-    z-index: 1000;
-    /* border: 15px solid transparent; */
-    /* padding: 20px; */
+    z-index: 10;
 
 
 }
-.popup-comlpain {
+.popup-complain {
 
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
-    /* border: 1px solid rgb(216, 15, 15); */
     border-radius: 32px;
-    /* width: 80%; */
     max-width: 500px;
     width: auto;
     height: auto;
-    z-index: 99999;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: aliceblue; */
-    /* flex-direction: column; */
-    /* animation: modal 0.5s alternate ease; */
-
 }
 
 
 
 
-.popup-comlpain__button{
+.popup-complain__button{
     margin-top: 25px;
     display: flex;
     flex-direction: row;
@@ -51,22 +43,14 @@
     gap: 15px;
 }
 
-.popup-comlpain__next{
-
-    /* color: rgb(104, 27, 27); */
-    /* float: right; */
-    /* font-size: 28px; */
+.popup-complain__next{
     font-weight: bold;
     cursor: pointer;
-    
     border-radius: 24px;
     border: none;
-
     box-sizing: border-box;
     min-width: 60px;
     padding: 15px 20px;
-
-    /* display: 0; */
     background-color:#e60023;
     color: #efefef;
 }
@@ -79,45 +63,35 @@
     box-sizing: border-box;
     min-width: 60px;
     padding: 15px 20px;
-    /* display: 0; */
     color: #efefef;
     opacity: 0.5;
     background-color: rgb(148, 143, 143);
 }
 
-.popup-comlpain__next:hover{
+.popup-complain__next:hover{
     background-color:#a5051d;
-    /* opacity: 0.5; */
 }
 
-.popup-comlpain__close{
+.popup-complain__close{
     color: #111;
-    /* float: right; */
-    /* font-size: 28px; */
     font-weight: bold;
     cursor: pointer;
-
     background-color: #efefef;
     border-radius: 24px;
     border: none;
-
     box-sizing: border-box;
     min-width: 60px;
     padding: 15px 20px;
-    /* padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px; */
 }
 
-.popup-comlpain__close:hover{
+.popup-complain__close:hover{
     background-color: #55515196;
 }
 /* ====================Конец Вызов модального окна================= */
 
 /* =================Костомизация RADIO button */
 
-.popup-comlpain__list-radio{
+.popup-complain__list-radio{
 
     display: none; /* Прячем исходный переключатель */
 
@@ -126,39 +100,33 @@
     position: relative; /* Относительное позиционирование */
     display: inline-block; /* Строчно-блочный элемент */
     width: 23px; height: 23px; /* Размеры */
-    /* background: #F5F5F5;  */
     /* Серый цвет фона */
     border-radius: 50%; /* Круглый переключатель */
-    
     box-shadow: inset 0 0 3px rgba(0,0,0,0.5); /*Тень внутри*/
 }
 
-.popup-comlpain__list-radio:checked + .custom-radio{
-
+.popup-complain__list-radio:checked + .custom-radio{
     background: black; /* Черный цвет фона */
 }
 
 /* Добавляем белую точку по центру */
-.popup-comlpain__list-radio:checked + .custom-radio::before{
+.popup-complain__list-radio:checked + .custom-radio::before{
     content: '';
     position: absolute;
     border-radius: 50%;
     top: 50%; left: 50%; transform: translate(-50%, -50%);
     background: #fff;
     width: 8px; height: 8px;
-    
-    /* border: 5px solid rgb(32, 12, 119,0.5); */
 }
 
 
 
 /* =============================================== */
 
-.popup-comlpain__wrapper{
-  
+.popup-complain__wrapper{ 
 }
 
-.popup-comlpain__title{
+.popup-complain__title{
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -167,36 +135,31 @@
 }
 
 
-.popup-comlpain__list{
-
-
+.popup-complain__list{
 }
 
 
-.popup-comlpain__list-item{
+.popup-complain__list-item{
 display: flex;
 margin-top: 25px;
-
 flex-direction: row;
-/* align-items: baseline; */
 gap: 15px;
 }
 
 
 
-.popup-comlpain__list-text{
+.popup-complain__list-text{
     display: flex;
     flex-direction: column;
 }
 
-.popup-comlpain__list-title{
+.popup-complain__list-title{
     font-size: 15px;
 
 }
 
-.popup-comlpain__list-subtitle{
+.popup-complain__list-subtitle{
     margin-top: 10px;
-
     font-size: 15px;
     color: #767676;
 }
