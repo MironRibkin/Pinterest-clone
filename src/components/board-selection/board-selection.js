@@ -1,19 +1,15 @@
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+const dropButton = document.querySelector (".drop-btn");
+dropButton.addEventListener ('click', () => {
+    document.getElementById('myDropdown').classList.toggle ('show')
+})
 
-// Close the board selection menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
+window.onclick = event => {
+  if (!event.target.matches('.drop-btn')) {
+    let dropdowns = document.getElementsByClassName ('dropdown-content');
+    for (let i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+          openDropdown.classList.remove('show');
       }
     }
   }
