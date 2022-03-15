@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* ====================Вызов модального окна================= */
+.modal-window{
+    display: none;
+    position: fixed;
+    /* z-index: 1; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10;
+
+
+}
+.popup-complain {
+
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 32px;
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.popup-complain__button{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.popup-complain__next{
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+    background-color:#e60023;
+    color: #efefef;
+}
+
+.disabled{
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+    color: #efefef;
+    opacity: 0.5;
+    background-color: rgb(148, 143, 143);
+}
+
+.popup-complain__next:hover{
+    background-color:#a5051d;
+}
+
+.popup-complain__close{
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #efefef;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+}
+
+.popup-complain__close:hover{
+    background-color: #55515196;
+}
+/* ====================Конец Вызов модального окна================= */
+
+/* =================Костомизация RADIO button */
+
+.popup-complain__list-radio{
+
+    display: none; /* Прячем исходный переключатель */
+
+}
+.custom-radio {
+    position: relative; /* Относительное позиционирование */
+    display: inline-block; /* Строчно-блочный элемент */
+    width: 23px; height: 23px; /* Размеры */
+    /* Серый цвет фона */
+    border-radius: 50%; /* Круглый переключатель */
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.5); /*Тень внутри*/
+}
+
+.popup-complain__list-radio:checked + .custom-radio{
+    background: black; /* Черный цвет фона */
+}
+
+/* Добавляем белую точку по центру */
+.popup-complain__list-radio:checked + .custom-radio::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: #fff;
+    width: 8px; height: 8px;
+}
+
+
+
+/* =============================================== */
+
+.popup-complain__wrapper{ 
+}
+
+.popup-complain__title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+
+.popup-complain__list{
+}
+
+
+.popup-complain__list-item{
+display: flex;
+margin-top: 25px;
+flex-direction: row;
+gap: 15px;
+}
+
+
+
+.popup-complain__list-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-complain__list-title{
+    font-size: 15px;
+
+}
+
+.popup-complain__list-subtitle{
+    margin-top: 10px;
+    font-size: 15px;
+    color: #767676;
+}
