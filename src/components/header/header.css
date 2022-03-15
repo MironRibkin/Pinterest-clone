@@ -85,6 +85,7 @@ header {
     padding-left: 40px;
     border: none;
     outline: none;
+    position: absolute;
 }
 
 .search-input_header:hover {
