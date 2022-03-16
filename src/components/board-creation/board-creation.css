@@ -1,0 +1,240 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* ====================Вызов модального окна================= */
+.modal-window-creat{
+    display: none;
+    position: fixed;
+    /* z-index: 1; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10;
+
+
+}
+.board-create {
+    
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 32px;
+    max-width: 700px;
+    width: auto;
+    /* height: calc(90vh - 100px); */
+    height: 70vh;
+    z-index: 20;
+    display: flex;
+    
+
+}
+
+
+
+
+.board-create__button{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.board-create__next{
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+    background-color:#e60023;
+    color: #efefef;
+}
+
+.disabled{
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+    color: #efefef;
+    opacity: 0.5;
+    background-color: rgb(148, 143, 143);
+}
+
+.board-create__next:hover{
+    background-color:#a5051d;
+}
+
+.board-create__close{
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #efefef;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+}
+
+.board-create__close:hover{
+    background-color: #55515196;
+}
+/* ====================Конец Вызов модального окна================= */
+
+
+
+
+/* =============================================== */
+
+
+.board-create__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.board-create__title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+/* Добавляем картинку */
+.board-create__img-wrapper{
+    max-width: 350px;
+    width: 350px;
+    height: 360px;
+}
+
+.board-create__img{
+border-radius: 25px;
+/* background-image: url(/components/board-creation/img/4ff1d71e975634e8972ea64dbfa02ba4.jpg);  */
+width: 100%;
+height: 100%;
+background-size: cover;
+
+}
+
+
+.board-create__wrapper{
+    display: flex;
+    gap: 50px;
+    /* justify-content: space-between; */
+}
+
+.board-create__info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/* инпуты поиск */
+.board-create__wrapper-input{
+    display: flex;
+    margin-top: 5px;
+}
+
+
+.board-create__info-subtitle{
+    font-size: 12px;
+}
+
+.board-create__info-coauthor{
+    margin-top: 50px;
+    font-size: 12px;
+}
+
+.board-create__input-name {
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    flex: 1 1 auto;
+    height: 40px;
+    /* margin-left: 8px; */
+    border-radius: 13px;
+    /* background: url("../../../public/308581.svg") no-repeat 16px, #efefef; */
+    background-size: 17px;
+    padding-left: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.267);
+    outline: none;
+}
+
+.board-create__input-coauthor{
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    flex: 1 1 auto;
+    /* margin-left: 8px; */
+    height: 40px;
+    border-radius: 13px;
+    /* background: url("../../../public/308581.svg") no-repeat 16px, #efefef; */
+    background-size: 17px;
+    padding-left: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.267);
+    outline: none;
+
+}
+
+/* .board-create__input:hover {
+    background-color: #e0e0e0;
+} */
+.board-create__input-coauthor:focus{
+    box-shadow: 0 0 0 4px rgba(0, 132, 255, 0.5);
+}
+.board-create__input-name:focus {
+
+    box-shadow: 0 0 0 4px rgba(0, 132, 255, 0.5);
+}
+
+
+
+/* ===================ФОРМА "СОЗДАНО" */
+
+.board-completed{
+    display: none;
+
+    background-color: #fefefe;
+    margin: 25% auto;
+    padding: 20px;
+    border-radius: 32px;
+    max-width: 20%;
+    width: auto;
+    height: 10%;
+    z-index: 20;
+    /* display: flex; */
+
+}
+
+.board-completed__finish{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-top: 15px;
+    /* margin-bottom: 50px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
