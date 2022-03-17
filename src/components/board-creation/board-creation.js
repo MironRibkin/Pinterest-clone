@@ -27,7 +27,8 @@ localStorage.setItem('board', stringified);
 });
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!
 
-btn.onclick = function () {
+
+   export function ButtonClickCreateBoard() {
    modalCreateBoard.style.display = "block";
    popupCreate.style.display = "flex";
    checkNameBoard();
@@ -37,9 +38,9 @@ btn.onclick = function () {
       return response.url
    });
    
-
-
 }
+
+btn.addEventListener('click', ButtonClickCreateBoard);
 
 closed.onclick = function () {
    modalCreateBoard.style.display = "none";
