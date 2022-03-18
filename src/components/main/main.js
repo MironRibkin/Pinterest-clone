@@ -2,9 +2,15 @@ import {ButtonClick} from "../card-popup/card-popup";
 
 const parentElement = document.querySelector('.parent');
 
+let idMultiplier = localStorage.getItem("idMultiplier") === null ? 1 : localStorage.getItem("idMultiplier");
+
 function createCard() {
     let card = document.createElement("div");
     card.classList.add("card");
+    card.id = `id${idMultiplier}`;
+    idMultiplier++;
+    localStorage.setItem("idMultiplier", idMultiplier);
+
 
     let height = Math.round(Math.random() * 290) + 170;
     card.style.gridRowEnd = "span " + Math.round(height / 17);
@@ -43,21 +49,56 @@ function createCard() {
         '            </svg>\n' +
         '        </button>';
     cardImage.innerHTML = cardHTML;
-    cardImage.getElementsByClassName('card__button-add-complain--hidden')[0].addEventListener('click', ButtonClick);
+    cardImage.getElementsByClassName('card__button-add-complain--hidden')[0].addEventListener('click', () => {
+        ButtonClick(card);
+    });
     cardCommentWrapper.append(cardCommentImg, cardCommentName);
     card.append(cardImage)
-
 
     if (Math.round(Math.random() * 5) === 4) {
         card.append(cardCommentWrapper);
     }
+    let creatDivElCard = document.createElement('div');
+    creatDivElCard.style.display = 'none';
+    switch (Math.round(Math.random() * 8)) {
+        case 0:
+            creatDivElCard.textContent = "доска 1";
+            break;
+        case 1:
+            creatDivElCard.textContent = "доска 2";
+            break;
+        case 2:
+            creatDivElCard.textContent = "доска 3";
+            break;
+        case 3:
+            creatDivElCard.textContent = "доска 4";
+            break;
+        case 4:
+            creatDivElCard.textContent = "доска 5";
+            break;
+        case 5:
+            creatDivElCard.textContent = "доска 6";
+            break;
+        case 6:
+            creatDivElCard.textContent = "доска 7";
+            break;
+        case 7:
+            creatDivElCard.textContent = "доска 8";
+            break;
+        default:
+    }
+
+    card.append(creatDivElCard);
     parentElement.append(card);
 }
 
 
 export function getCardData() {
-    for (let i = 0; i <= 30; i++) {
-        createCard()
+    if (document.getElementsByClassName("card").length < 1500 &&
+        document.querySelector(".search-input_header").value.length === 0) {
+        for (let i = 0; i <= 50; i++) {
+            createCard()
+        }
     }
 }
 

@@ -3,19 +3,19 @@
 const modal = document.getElementById("modal-window");
 const closed = document.getElementById("popup-complain__close");
 
-export function ButtonClick() {
+export function ButtonClick(item) {
     modal.style.display = "block";
     unckeckAllRadio();
     checkAllRadio();
     document.querySelector("body").style.overflow = "hidden";
-
+    localStorage.setItem("last_card", item.id);
 }
 
 
 closed.onclick = function () {
     modal.style.display = "none";
     unckeckAllRadio();
-    document.querySelector("body").style.overflow = "auto";
+    document.querySelector("body").removeAttribute("overflow");
 }
 
 window.onclick = function (event) {
@@ -23,8 +23,7 @@ window.onclick = function (event) {
         modal.style.display = "none";
         modal.style.cursor = "zoom-out"
         unckeckAllRadio();
-        document.querySelector("body").style.overflow = "auto";
-
+        document.querySelector("body").removeAttribute("overflow");
     }
 }
 
@@ -56,7 +55,17 @@ function checkAllRadio() {
             }
         })
     })
-};
+}
+
+btn_next.addEventListener("click", () => {
+    deletedImgCard();
+});
 
 
-
+function deletedImgCard() {
+    let item = document.getElementById(localStorage.getItem("last_card"))
+    modal.style.display = "none";
+    if (item !== null) {
+        item.parentNode.removeChild(item);
+    }
+}

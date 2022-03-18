@@ -9,7 +9,7 @@ const popupCreateCompleted = document.querySelector('.board-completed'); // div 
 const popupImgLogo = document.querySelector('.board-create__img'); //div картинки
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!! НАДО ДОБАВИТЬ НА ГЛАВНУЮ СТРАНИЦУ!!!!!!!!!!!!!!!!!!!!!!!!!
-let DATA = [];  // массив досок
+let data = [];  // массив досок
 //добавляем картинку из API при загружке страницы и создаем доску по умолчанию "ПРОФИЛЬ"
 fetch("https://picsum.photos/300/500").then(response => {
     popupImgLogo.style.background = `url("${response.url}")`;
@@ -18,9 +18,9 @@ fetch("https://picsum.photos/300/500").then(response => {
     const imageLogo = popupImgLogo.style.background;  // забираем стиль background(url) в переменную
     board.name = 'Доска 1';
     board.imageLogo = imageLogo;  // Добавление ссылки на лого
-    DATA.push(board); // добавляем объект в массив
+    data.push(board); // добавляем объект в массив
 // ===================добавляем массив в localStorage===============
-    const stringified = JSON.stringify(DATA);
+    const stringified = JSON.stringify(data);
     localStorage.setItem('board', stringified);
 // ================================================================
 });
@@ -52,7 +52,7 @@ closed.onclick = function () {
 
 window.addEventListener('click', (event) => {
 
-    if (event.target == modalCreateBoard) {
+    if (event.target === modalCreateBoard) {
 
         modalCreateBoard.style.display = "none";
         clearInputCreateBoard();
@@ -81,24 +81,24 @@ btnCreate.addEventListener('click', () => {
     const imageLogo = popupImgLogo.style.background;
 // ===================достаем массив из localStorage===============
     const result = localStorage.getItem('board');
-    DATA = JSON.parse(result);
+    data = JSON.parse(result);
 // ================================================================
 // Проверка на символы в инпутах, для добавления в массив
     if (inputNameСoauthor.value.length > 0 && inputNameBoard.value.length > 0) {
         board.name = inputNameBoard.value;  // Добавление имени доски
         board.coauthor = inputNameСoauthor.value; // Добавление имени соавтора
         board.imageLogo = imageLogo;  // Добавление ссылки на лого
-        DATA.push(board);
+        data.push(board);
         showFormCompleted();
 
     } else if (inputNameBoard.value.length > 0) {
         board.name = inputNameBoard.value;  // Добавление имени доски
         board.imageLogo = imageLogo;  // Добавление ссылки на лого
-        DATA.push(board);
+        data.push(board);
         showFormCompleted();
     }
 // ===================добавляем массив в localStorage===============
-    const stringified = JSON.stringify(DATA);
+    const stringified = JSON.stringify(data);
     localStorage.setItem('board', stringified);
 // ================================================================
 
@@ -116,7 +116,7 @@ const showFormCompleted = () => {
         clearInputCreateBoard();
         popupCreateCompleted.style.display = "none";
         modalCreateBoard.style.display = "none";
-    }, 800)
+    }, 5000)
     popupCreate.style.display = "flex";
 };
 
