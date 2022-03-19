@@ -1,0 +1,254 @@
+
+
+
+/* ====================Вызов модального окна================= */
+.modal-window-profile {
+    display: none;
+    position: fixed;
+    /* z-index: 1; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.popup-profile {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 32px;
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+.popup-profile__button {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.popup-profile__rename {
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+    background-color: #e60023;
+    color: #efefef;
+}
+
+/* .disabled {
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+    color: #efefef;
+    opacity: 0.5;
+    background-color: rgb(148, 143, 143);
+} */
+
+.popup-profile__rename:hover {
+    background-color: #a5051d;
+}
+
+.popup-profile__rename:active {
+    transform: scale(0.9166);
+}
+
+.popup-profile__close {
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #efefef;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+}
+
+.popup-profile__close:hover {
+    background-color: #55515196;
+}
+
+.popup-profile__close:active {
+    transform: scale(0.9166);
+}
+
+/* ====================Конец Вызов модального окна================= */
+
+
+
+
+
+.popup-profile__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+
+
+.board-img {
+    border-radius: 25px;
+    /* background-image: url(/components/board-creation/img/4ff1d71e975634e8972ea64dbfa02ba4.jpg);  */
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background: center no-repeat;
+
+}
+
+
+.board-wrapper{
+
+}
+
+
+.popup-profile__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board-img-popup{
+    border-radius: 25px;
+    /* background-image: url(/components/board-creation/img/4ff1d71e975634e8972ea64dbfa02ba4.jpg);  */
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background: center no-repeat;
+}
+
+
+/* ===========ОКНО РЕДАКТИРОВАНИЯ===================== */
+
+.board-rename {
+    display: none;
+    position: absolute;
+    left: 43%;
+    top: -25%; 
+    background-color: #fefefe;
+    margin: 25% auto;
+    padding: 20px;
+    border-radius: 32px;
+    max-width: 30%;
+    width: auto;
+    height: 15%;
+    z-index: 20;
+    /* display: flex; */
+    box-shadow: 0 0 10px rgba(59, 35, 35, 0.5); /* Параметры тени */
+
+}
+
+.board-rename__wrapper {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-top: 15px;
+    /* margin-bottom: 50px; */
+}
+
+.board-rename__title{
+    margin-bottom: 20px;
+}
+
+.board-rename__input-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+
+}
+
+/* =====Инпут редактирования==== */
+
+.board-rename__input {
+    max-width: 100%;
+    width: auto;
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    flex: 1 1 auto;
+    /* margin-left: 8px; */
+    height: 30px;
+    border-radius: 13px;
+    /* background: url("../../../public/308581.svg") no-repeat 16px, #efefef; */
+    background-size: 17px;
+    padding-left: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.267);
+    outline: none;
+
+}
+
+.board-rename__input:focus {
+    box-shadow: 0 0 0 4px rgba(0, 132, 255, 0.5);
+}
+
+
+.board-rename__close{
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #efefef;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+
+}
+
+.board-rename__close:hover {
+    background-color: #55515196;
+}
+
+.board-rename__close:active {
+    transform: scale(0.9166);
+}
+
+
+
+.board-rename__ok{
+
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 24px;
+    border: none;
+    box-sizing: border-box;
+    min-width: 60px;
+    padding: 15px 20px;
+    color: #efefef;
+    opacity: 0.5;
+
+
+    background-color: #a5051d;
+}
+
+.board-rename__ok:hover {
+    opacity: 0.8;
+}
+
+.board-rename__ok:active {
+    transform: scale(0.9166);
+}

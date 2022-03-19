@@ -16,7 +16,9 @@ fetch("https://picsum.photos/300/500").then(response => {
 }).then(() => {
     const board = {}; //создание переменной типа объект
     const imageLogo = popupImgLogo.style.background;  // забираем стиль background(url) в переменную
+    board.id = 1;
     board.name = 'Доска 1';
+    board.img = [];
     board.imageLogo = imageLogo;  // Добавление ссылки на лого
     data.push(board); // добавляем объект в массив
 // ===================добавляем массив в localStorage===============
@@ -82,18 +84,21 @@ btnCreate.addEventListener('click', () => {
 // ===================достаем массив из localStorage===============
     const result = localStorage.getItem('board');
     data = JSON.parse(result);
+    board.id = data.length + 1;
 // ================================================================
 // Проверка на символы в инпутах, для добавления в массив
     if (inputNameСoauthor.value.length > 0 && inputNameBoard.value.length > 0) {
         board.name = inputNameBoard.value;  // Добавление имени доски
         board.coauthor = inputNameСoauthor.value; // Добавление имени соавтора
         board.imageLogo = imageLogo;  // Добавление ссылки на лого
+        board.img = []; // создание массива для картинок
         data.push(board);
         showFormCompleted();
 
     } else if (inputNameBoard.value.length > 0) {
         board.name = inputNameBoard.value;  // Добавление имени доски
         board.imageLogo = imageLogo;  // Добавление ссылки на лого
+        board.img = []; // создание массива для картинок
         data.push(board);
         showFormCompleted();
     }
