@@ -1,0 +1,20 @@
+.save-btn{
+
+border-radius: 18px;
+width: auto;
+background-size: 18px 18px;
+text-indent: 10px;
+font: 14px/28px "Helvetica Neue", Helvetica, Arial, "sans-serif";
+font-weight: bold;
+padding: 0 6px 0 0;
+background-color: #e60023;
+color: #fff;
+
+}
+
+
+.save-btn:active{
+
+background-color: black;
+
+}
