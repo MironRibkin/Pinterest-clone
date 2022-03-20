@@ -60,6 +60,12 @@ window.addEventListener('click', (event) => {
         psevdoFilter.style.display = "none";
         serachInputElement.style.display = "none";
     }
+    if (!Array.from(document.getElementsByClassName("card__button-add--hidden")).includes(event.target) &&
+        !Array.from(document.getElementsByClassName("dropdown-content")).includes(event.target) &&
+        !Array.from(document.getElementsByClassName('drop-btn')).includes(event.target))
+        for (let board of document.getElementsByClassName("toggle-drop")) {
+            board.classList.remove("show");
+        }
 });
 
 

@@ -4,7 +4,7 @@
 const btnSave = document.querySelector('.card__button-add--hidden')
 
 btnSave.addEventListener('click', () =>{
-    console.log('123');
+
 })
 
 

@@ -121,7 +121,7 @@ const showFormCompleted = () => {
         clearInputCreateBoard();
         popupCreateCompleted.style.display = "none";
         modalCreateBoard.style.display = "none";
-    }, 5000)
+    }, 2500)
     popupCreate.style.display = "flex";
 };
 

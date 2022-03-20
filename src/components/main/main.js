@@ -56,113 +56,72 @@ function createCard() {
     card.append(cardImage)
 
 
+    cardImage.getElementsByClassName('card__button-add--hidden')[0].addEventListener('click', () => {
+        localStorage.setItem("last_card", card.id); // при клике ложим ID карты
+        initList(cardImage) // рисуем список
 
-
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-cardImage.getElementsByClassName('card__button-add--hidden')[0].addEventListener('click', () => {
-    localStorage.setItem("last_card", card.id); // при клике ложим ID карты
-    getArrayBoard(); // достаем массив
-    initList() // рисуем список
-
-// !!!!!!!!!!!!!!!!!!!ПОПРАВИТЬ НАЗВАНИЕ ФУНКЦИИ
-    let cardTest2 = document.getElementById(localStorage.getItem("last_card"));
-cardTest2.addEventListener('click', (event) => {
-    // console.log(event.target)
-//    let divList = cardTest2.querySelector('.board-wrapper2');
-//     console.log(divList);
-//     divList.innerHTML = '';
-    getIdBoard(event, imgEl);
-    let data = getArrayBoard(); //забираем массив из localStorage
-    addImgArray(event);
-})
+        let cardTest2 = document.getElementById(localStorage.getItem("last_card"));
+        cardTest2.addEventListener('click', (event) => {
+            getIdBoard(event, imgEl);
+        })
 
         // ==================Получаем URL нужной картинки===============================
         let thsiCard = document.getElementById(localStorage.getItem("last_card")); // Получаем нужную карточку
         let firstElementImg = thsiCard.firstElementChild; // получаем первый элемент(картинку)
         const imgEl = firstElementImg.style.background;
-        console.log(imgEl);
-        console.log(thsiCard);
-        console.log(firstElementImg);
-
-
-});
-
-
-let getArrayBoard = () =>{
-    // ===================достаем массив из localStorage===============
-    const result = localStorage.getItem('board');
-    data = JSON.parse(result);
-// ================================================================
-return data;
-}
-
-// ФУНКЦИЯ======================Получаем id и добавляем URL в массив==============
-const getIdBoard = (event, img) =>{
-    let id = event.target.dataset.id;
-    id = id-1;
-    console.log(img);
-    let data = getArrayBoard(); // выгружаем массив из localStorage
-
-    let findImg = data[id].img.includes(img)  // ищем URL картинки в массиве
-    console.log(findImg);
-
-    // Если не нашли, добавляем в массив и кидаем в localStorage
-    if (findImg === false) {
-
-        data[id].img.push(img);
-        // ===================добавляем массив в localStorage===============
-                        const stringified = JSON.stringify(data);
-                        localStorage.setItem('board', stringified);
-        // ================================================================
-    }
-    
-}
-// ==============================
-const addImgArray = (idBoard) => {
-    let id = idBoard - 1;
-    console.log(data[id]);
-    // data[id].img.push(imgEl);
-
-}
-
-
-
-
-let data = getArrayBoard(); //забираем массив из localStorage
-// рисую выподающий список исходя из количества элементов
-const initList = () => { data.forEach(element => {
-    const divWrapper = document.createElement('div');
-    const divWrapper2 = document.createElement('div'); /// ПОПРАВИТЬ!
-    const divBoard = document.createElement('div');
-    const imgBoard = document.createElement('div');
-    imgBoard.classList.add('board-img');
-    divWrapper.setAttribute('data-id', element.id);
-    divWrapper.classList.add('board-wrapper');
-    divWrapper2.classList.add('board-wrapper2') // Поправить
-    divBoard.setAttribute('data-id', element.id);
-    imgBoard.setAttribute('data-id', element.id);
-    // popupProfile.setAttribute('data-id', element.id);
-    // const img1 = element.imgLogo;
-    imgBoard.style.background = element.imageLogo;
-    // console.log(element.imageLogo);
-    divBoard.append(element.name);
-    divWrapper.append(imgBoard);
-    divWrapper.append(divBoard);
-    
-    divWrapper2.append(divWrapper); // поправить
-    divWrapper2.style.display = 'flex';
-    // divWrapper.style.position = 'absolute'
-    card.append(divWrapper2);
     });
-    
-}
 
 
+    let getArrayBoard = () => {
+        const result = localStorage.getItem('board');
+        data = JSON.parse(result);
+        return data;
+    }
 
+    const getIdBoard = (event, img) => {
+        let id = event.target.dataset.id;
+        id = id - 1;
+        let data = getArrayBoard(); // выгружаем массив из localStorage
+        let findImg = data[id].img.includes(img)  // ищем URL картинки в массиве
+        // Если не нашли, добавляем в массив и кидаем в localStorage
+        if (findImg === false) {
 
+            data[id].img.push(img);
+            // ===================добавляем массив в localStorage===============
+            const stringified = JSON.stringify(data);
+            localStorage.setItem('board', stringified);
+            // ================================================================
+        }
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    }
+
+    let data = getArrayBoard(); //забираем массив из localStorage
+    const initList = (item) => {
+        let boards = document.createElement("div")
+        boards.classList.add("dropdown-content")
+        boards.classList.add("toggle-drop")
+        boards.classList.add("show")
+
+        data.forEach(element => {
+            const divWrapper = document.createElement('div');
+            const divBoard = document.createElement('div');
+            const imgBoard = document.createElement('div');
+            imgBoard.classList.add('board-img');
+            divWrapper.setAttribute('data-id', element.id);
+            divWrapper.classList.add('board-wrapper')
+            divBoard.setAttribute('data-id', element.id);
+            imgBoard.style.background = element.imageLogo;
+            divBoard.append(element.name);
+            divWrapper.append(imgBoard);
+            divWrapper.append(divBoard);
+            divWrapper.addEventListener('click', () => {
+
+            })
+            boards.append(divWrapper);
+            item.append(boards);
+        });
+
+    }
 
 
     if (Math.round(Math.random() * 5) === 4) {
