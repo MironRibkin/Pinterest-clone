@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="components/modal-window-card/modal-window-card.css">
+<script type="module" src="components/modal-window-card/modal-window-card.js"></script>
+
+<div class="card">
+    <div class="card__image">
+        <button class="card__button-add--hidden" id="add-to-board">Сохранить</button>
+        <button class="card__button-add-complain--hidden" id="btn-popup-complain">
+            <svg width="17px" height="17px" viewBox="0 0 15 15" class="bi bi-flag" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21.294 21.294 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21.317 21.317 0 0 0 14 7.655V1.222z"/>
+            </svg>
+        </button>
+    </div>
+    <div class="card__comment"></div>
+
+    
+</div>
+
+<div class="modal-card">
+    <div class="modal-card__image"></div>
+    <div class="modal-card__content">
+        <div class="modal-card__buttons">
+            <button class="modal-card__button-board">Доска</button>
+            <button class="modal-card__button-add" id="add-to-board">Сохранить</button>
+        </div>
+        <div class="source">
+            <h3>Posted from source : <a target="https://mockapi.io/" href="https://mockapi.io/">mockAPI</a></h3>
+        </div>
+        <div class="modal-card__comments">
+            <h3 class="modal-card__title-comments">Комментарии</h3>
+            <div class="modal-card__circle--hover">
+                <div class="modal-card__arrow"></div>
+            </div>
+            
+        </div>
+        
+        <div class="modal-card__block-comments">
+            <div class="comment-conteiner" id="comm1">
+                <div class="comment__photo" id="comment__photo1"></div>
+                <div class="comment__content">
+                    <div class="comment__text-conteiner">
+                        <div class="comment__text-user"></div>
+                        <div class="comment__text-comment"></div>
+                    </div>
+                    <div class="icons-conteiner">
+                        <div class="icons-likes-answer">
+                            <div class="conteiner-likes">
+                                <img class="icon-likes" src="components/card/image/premium-icon-hearts-4354267.png"  width="18px" height="18px" alt="">
+                                <p class="count-likes"></p>
+                            </div>
+                            
+                            <img class="icon-answer" src="components/card/image/free-icon-comment-black-oval-bubble-shape-25355.png" width="16px" height="16px"  alt="">
+                        </div>
+                        <div class="healthy">
+                            <img class="icon-healthy" src="components/card/image/free-icon-thumb-up-1040002.png" width="18px" height="18px" alt="">
+                            <p class="text-healthy">Полезно</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-conteiner" id="comm1">
+                <div class="comment__photo" id="comment__photo1"></div>
+                <div class="comment__content">
+                    <div class="comment__text-conteiner">
+                        <div class="comment__text-user"></div>
+                        <div class="comment__text-comment"></div>
+                    </div>
+                    <div class="icons-conteiner">
+                        <div class="icons-likes-answer">
+                            <div class="conteiner-likes">
+                                <img class="icon-likes" src="components/card/image/premium-icon-hearts-4354267.png"  width="18px" height="18px" alt="">
+                                <p class="count-likes"></p>
+                            </div>
+                            <img class="icon-answer" src="components/card/image/free-icon-comment-black-oval-bubble-shape-25355.png" width="16px" height="16px"  alt="">
+                        </div>
+                        <div class="healthy">
+                            <img class="icon-healthy" src="components/card/image/free-icon-thumb-up-1040002.png" width="18px" height="18px" alt="">
+                            <p class="text-healthy">Полезно</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-conteiner" id="comm1">
+                <div class="comment__photo" id="comment__photo1"></div>
+                <div class="comment__content">
+                    <div class="comment__text-conteiner">
+                        <div class="comment__text-user"></div>
+                        <div class="comment__text-comment">hello</div>
+                    </div>
+                    <div class="icons-conteiner">
+                        <div class="icons-likes-answer">
+                            <div class="conteiner-likes">
+                                <img class="icon-likes" src="components/card/image/premium-icon-hearts-4354267.png"  width="18px" height="18px" alt="">
+                                <p class="count-likes"></p>
+                            </div>
+                            <img class="icon-answer" src="components/card/image/free-icon-comment-black-oval-bubble-shape-25355.png" width="16px" height="16px"  alt="">
+                        </div>
+                        <div class="healthy">
+                            <img class="icon-healthy" src="components/card/image/free-icon-thumb-up-1040002.png" width="18px" height="18px" alt="">
+                            <p class="text-healthy">Полезно</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            
+        </div>
+        <div class="comment-form" id="comm1">
+            <div class="comment__photo-form" id="comment__photo1"></div>
+            <form class="comment__content">
+                <input id="input-form" class="comment__text-conteiner" placeholder="Добавить комментарий"></input>   
+                <div class="buttons__form">
+                    <button type="button" class="cancel">Отмена</button>
+                    <button type="button" class="ok">Готово</button>
+                    
+                </div>         
+            </form>
+           
+        </div>
+    </div>
+    <!-- <div class="circle"> -->
+        <div class="come-back">
+            
+        </div>
+    <!-- </div> -->
+</div>
+
+
+
