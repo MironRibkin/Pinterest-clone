@@ -16,11 +16,12 @@ const iconAnswer = document.getElementsByClassName('icon-answer');
 const blockCommentContent = document.getElementsByClassName('comment__content')
 const formAvatar = document.querySelector('.comment__photo-form');
 const buttonsForm = document.querySelector('.buttons__form');
-console.log(iconHeart)
+
 
 const inputComment = document.getElementById('input-form');
 const buttonCancel = document.querySelector('.cancel');
 const buttonOk = document.querySelector('.ok');
+
 //вытаскиваю bg из карточки чтобы такой же Bg был в попапе
 const style = getComputedStyle(card__image)
 const bgCard = style.background;
@@ -54,23 +55,45 @@ modalCardArrow.addEventListener('click', () =>{
 
 
 //============Нажатие на палец вверх
-
+const textHealthy = document.getElementsByClassName('text-healthy');
 for(let i=0 ; i< healthy.length ; i++) {
 healthy[i].addEventListener('click' , ()=> {
-   
    iconHealthy[i].classList.toggle('healthy-click');
+   if(iconHealthy[i].className === 'icon-healthy healthy-click') {
+      textHealthy[i].innerText = 'Полезно ' + '1';
+   }
+   else {
+      textHealthy[i].innerText = 'Полезно ';
+   }
   
+   
 })
 }
 
-//Нажатие на сердце
-for(let i=0; i<iconHeart.length;i++) {
-iconHeart[i].addEventListener('click' , ()=> {
+
+// вытаскивание лайков с api и увеличение count на 1 при клике 
+const countLikes = document.getElementsByClassName('count-likes');
+  fetch('https://622e044c8d943bae348c790c.mockapi.io/Comments')
+  .then(response => response.json())
+  .then(json => {
+     for(let i=0; i<countLikes.length;i++) {
+        const {likes} = json[i];
+        
+        countLikes[i].innerText = likes;
+        iconHeart[i].addEventListener('click' , ()=> {
    
    
-   iconHeart[i].classList.toggle('heart-click');
-})
-}
+         iconHeart[i].classList.toggle('heart-click');
+         if(iconHeart[i].className === 'icon-likes heart-click') {
+            countLikes[i].innerText = likes+1;
+         }
+         else {
+            countLikes[i].innerText = likes;
+         }
+      })
+     }
+     
+  })
 
 
 // ======== Закрытие окна при клике в любое место кроме расширенной версии карточки
@@ -123,15 +146,15 @@ inputComment.addEventListener('input' , () => {
 
 // функция которая делает кнопку неактивной если там ничего нету
 
-const deactivateButton = () => {
-if(!inputComment.value) {
-      buttonOk.setAttribute = ('disabled',true);
+// const deactivateButton = () => {
+// if(!inputComment.value) {
+//       buttonOk.setAttribute('disabled',true);
       
-   }
-   else {
-      buttonOk.removeAttribute = ('disabled',true);
-   }
-}
+//    }
+//    else {
+//       buttonOk.removeAttribute('disabled',true);
+//    }
+// }
 
 //при клике на форму меняем border-radius
 
@@ -148,9 +171,10 @@ buttonCancel.addEventListener('click' , () => {
 // при клике на кнопку окей создается комментарий
 
 buttonOk.addEventListener('click' , () => {
-   
+  
    const divCommentsUser = document.createElement('div');
    const commentTextUser = document.createElement('div');
+   commentTextUser.classList.add('username-form');
    const commentTextComment = document.createElement('div');
    // const fullBlockComment = document.createElement('div');
    
@@ -178,7 +202,7 @@ buttonOk.addEventListener('click' , () => {
    // fullBlockComment.append(formAvatar);
    inputComment.value = '';
    buttonOk.classList.remove('ok-click');
-   deactivateButton();
+   // deactivateButton();
    
 })
 
@@ -192,12 +216,13 @@ buttonOkForm.innerText = 'Отправить';
 
 buttonCancelForm.classList.add('button-cancel-form-answer');
 buttonCancelForm.innerText = 'Отмена';
+
 for(let i=0 ; i<iconAnswer.length; i++) {
 iconAnswer[i].addEventListener('click' , () => {
       buttonCancelForm.style.display = 'block';
       buttonOkForm.style.display = 'block';
+     
    if(formAnswer) {
-      console.log(formAnswer);
       formAnswer.remove();
 
    }
@@ -260,20 +285,26 @@ fetch('https://jsonplaceholder.typicode.com/users')
   })
 
 
-  // заполнение из api аватаров
+//   заполнение из api аватаров
 
-// const commentPhoto = document.getElementsByClassName('comment__photo');
-//   fetch('https://jsonplaceholder.typicode.com/photos')
+const commentPhoto = document.getElementsByClassName('comment__photo');
+
+  fetch('https://jsonplaceholder.typicode.com/photos')
+  .then(response => response.json())
+  .then(json =>  {
+   for(let i = 0 ; i < commentPhoto.length;i++) {
+      const {url} = json[i];
+      const imageUrl = url;
+      console.log(imageUrl)
+      commentPhoto[i].style.background = `url(${imageUrl})`;
+   }
+  })
+
+// аватары с нашей api не прогружаются
+
+//   fetch('https://622e044c8d943bae348c790c.mockapi.io/Comments')
 //   .then(response => response.json())
-//   .then(json =>  {
-//    for(let i =0 ; i< commentPhoto.length;i++) {
-//       const {url} = json[i];
-
-//       commentPhoto[i].url = url;
-      
-//    }
-//   })
-
+//   .then(json =>  console.log(json))
 
 
 

@@ -1,5 +1,5 @@
 
-.card {
+/* .card {
     max-width: 260px;
     width: 100%;
     height: 350px;
@@ -96,7 +96,16 @@
     position: absolute;
     left: 82%;
     top: 88%;
-}
+} */
+
+
+
+
+
+
+
+
+
 
 .modal-card {
     display: none;
@@ -334,7 +343,7 @@ box-sizing: border-box;
     
     width: 50px;
     height: 50px;
-    background-image: url('image/b2cab7c945418108cbc0d5e5ace7e3a1.jpg');
+    /* background-image: url('image/b2cab7c945418108cbc0d5e5ace7e3a1.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -394,12 +403,11 @@ box-sizing: border-box;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     border: 0.5px solid #cdcdcd;
     min-height: 60px;
     border-radius: 30px;
     word-wrap: break-word;
-    padding: 12px;
+    padding: 7px 15px;
     box-sizing: border-box;
 }
 
@@ -407,6 +415,10 @@ box-sizing: border-box;
     display: flex;
     width: 90%;
 
+}
+
+.username-form {
+    font-weight: 700;
 }
 
 
@@ -422,7 +434,20 @@ box-sizing: border-box;
 }
 .icons-likes-answer {
     display: flex;
+    align-items: center;
     gap: 20px;
+}
+
+.conteiner-likes {
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 5px;
+}
+
+.count-likes {
+    color: #767676;
+    font-size: 14px;
 }
 
 
@@ -592,6 +617,9 @@ box-sizing: border-box;
 
 
 }
+
+
+
 
 
 
