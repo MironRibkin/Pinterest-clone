@@ -13,8 +13,8 @@ const back = document.querySelector('.come-back');
 const healthy = document.getElementsByClassName('healthy');
 const iconHealthy = document.getElementsByClassName('icon-healthy');
 const blockComments = document.querySelector('.modal-card__block-comments');
-const cardButtonAdd = document.querySelector('.card__button-add--hidden');
-const cardButtonComplain = document.querySelector('.card__button-add-complain--hidden');
+const cardButtonAdd = document.getElementsByClassName('card__button-add--hidden');
+const cardButtonComplain = document.getElementsByClassName('card__button-add-complain--hidden');
 const iconHeart = document.getElementsByClassName('icon-likes');
 const iconAnswer = document.getElementsByClassName('icon-answer');
 const blockCommentContent = document.getElementsByClassName('comment__content')
@@ -30,16 +30,17 @@ const buttonOk = document.querySelector('.ok');
 
 
 //============Открытие расширенной версии карточки
+const buttonTest = document.getElementsByClassName('button-test');
 for(let i = 0 ; i < card__image.length ; i++){
    card__image[i].addEventListener('click', (event) => { 
-      if(event.target !== cardButtonAdd && event.target !== cardButtonComplain) {
+      if(event.target !== cardButtonAdd[i] && event.target !== buttonTest[i]) {
          parent.style.display = 'none';
          modalCard.style.display = 'flex';
          back.style.display = 'block';
          //bg модалки такой же как и в карточке 
          modalCardImage.style.background = card__image[i].style.background;
          modalCardImage.style.backgroundPosition = 'top left'
-         modalCardImage.style.backgroundSize = 'cover'
+         modalCardImage.style.backgroundSize = 'cover';
          
       }
       
@@ -305,6 +306,7 @@ const commentPhoto = document.getElementsByClassName('comment__photo');
    for(let i = 0 ; i < commentPhoto.length;i++) {
       const {url} = json[i];
       const imageUrl = url;
+      console.log(imageUrl)
       commentPhoto[i].style.background = `url(${imageUrl})`;
    }
   })
