@@ -8,7 +8,6 @@ const divRename = document.querySelector('.board-rename');
 let popupProfile = document.querySelector('.popup-profile');
 
 
-
 // рисую выподающий список исходя из количества элементов
 const initList = () => {
 
@@ -17,7 +16,7 @@ const initList = () => {
         const divBoard = document.createElement('div');
         const imgBoard = document.createElement('div');
         imgBoard.classList.add('board-img');
-        
+
         divWrapper.setAttribute('data-id', element.id);
         divWrapper.classList.add('board-wrapper')
         divBoard.setAttribute('data-id', element.id);
@@ -50,7 +49,6 @@ boardList.addEventListener('click', () => {
 });
 
 
-
 // ФУНКЦИЯ========= Забираю ID по таргету========
 const getIdBoard = (event) => {
     let id = event.target.dataset.id;
@@ -79,7 +77,7 @@ const showBoardProfile = (boardId) => {
 //ФУНКЦИЯ Рисую доску по ID в popup
 let boardProfile = (profileId) => {
     divWrapperHead.innerHTML = '';
-    
+
     const imgLogoPopup = document.createElement('div'); // лого
     const titlePopup = document.createElement('div'); // Заголовок
     // const imgWrapper = document.createElement('div'); // обвертка для коллекции картинок
@@ -93,27 +91,28 @@ let boardProfile = (profileId) => {
     divWrapperHead.append(divWrapperPopup);
     divWrapperPopup.append(imgLogoPopup);
     const imgWrapper = document.querySelector('.imgWrapper')
-    // imgWrapper.innerHTML = '';
-    
+    imgWrapper.innerHTML = '';
+
     // popupProfile.append(imgWrapper);
-console.log(btnRename);
+    console.log(btnRename);
 
 
     // отрисовка ПИНОВ
-const declination = ['пин', 'пина', 'пинов']
-function getDeclination(number, txt) {
+    const declination = ['пин', 'пина', 'пинов']
+
+    function getDeclination(number, txt) {
         let cases = [2, 0, 1, 1, 1, 2];
         return txt[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
     }
 
 
-const numberPin = document.querySelector('.number-pin')
-numberPin.innerHTML = '';
-const pin = getDeclination(profileId.img.length, declination)
-console.log(numberPin);
-const nubmer = profileId.img.length
-numberPin.append(nubmer, ' ' ,pin);
-console.log( profileId.img.length);
+    const numberPin = document.querySelector('.number-pin')
+    numberPin.innerHTML = '';
+    const pin = getDeclination(profileId.img.length, declination)
+    console.log(numberPin);
+    const nubmer = profileId.img.length
+    numberPin.append(nubmer, ' ', pin);
+    console.log(profileId.img.length);
     profileId.img.forEach(element => {
 
         const imgCard = document.createElement('div');
@@ -122,8 +121,8 @@ console.log( profileId.img.length);
         // imgCard.append(element);
         imgWrapper.append(imgCard);
 
-    let height = Math.round(Math.random() * (400 - 320) + 320);
-    imgCard.style.height = height + 'px';
+        let height = Math.round(Math.random() * (400 - 320) + 320);
+        imgCard.style.height = height + 'px';
 
     });
 
