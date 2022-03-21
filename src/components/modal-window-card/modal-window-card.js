@@ -1,6 +1,10 @@
+// import {ButtonClick} from "../card-popup/card-popup";
 
-const card__image = document.querySelector('.card__image');
-const card = document.querySelector('.card');
+
+
+const card__image = document.getElementsByClassName('card__image');
+// const card = document.querySelector('.card');
+const parent = document.querySelector('.parent');
 const modalCard = document.querySelector('.modal-card');
 const modalCardImage = document.querySelector('.modal-card__image ');
 const modalCardCircle = document.querySelector('modal-card__circle--hover')
@@ -22,26 +26,32 @@ const inputComment = document.getElementById('input-form');
 const buttonCancel = document.querySelector('.cancel');
 const buttonOk = document.querySelector('.ok');
 
-//вытаскиваю bg из карточки чтобы такой же Bg был в попапе
-const style = getComputedStyle(card__image)
-const bgCard = style.background;
+
 
 
 //============Открытие расширенной версии карточки
-card__image.addEventListener('click', (event) => { 
-   if(event.target !== cardButtonAdd && event.target !== cardButtonComplain) {
-      card.style.display = 'none';
-      modalCard.style.display = 'flex';
-      back.style.display = 'block';
-      modalCardImage.style.background = bgCard;
-   }
-   
-})
+for(let i = 0 ; i < card__image.length ; i++){
+   card__image[i].addEventListener('click', (event) => { 
+      if(event.target !== cardButtonAdd && event.target !== cardButtonComplain) {
+         parent.style.display = 'none';
+         modalCard.style.display = 'flex';
+         back.style.display = 'block';
+         //bg модалки такой же как и в карточке 
+         modalCardImage.style.background = card__image[i].style.background;
+         modalCardImage.style.backgroundPosition = 'top left'
+         modalCardImage.style.backgroundSize = 'cover'
+         
+      }
+      
+   })
+}
+
+
 
 back.onclick = function () {
    modalCard.style.display = 'none';
-   card.style.display = 'block'
-   openCloseBlockComm();
+   parent.style.display = 'grid'
+   // openCloseBlockComm();
    
 }
 
@@ -295,7 +305,6 @@ const commentPhoto = document.getElementsByClassName('comment__photo');
    for(let i = 0 ; i < commentPhoto.length;i++) {
       const {url} = json[i];
       const imageUrl = url;
-      console.log(imageUrl)
       commentPhoto[i].style.background = `url(${imageUrl})`;
    }
   })

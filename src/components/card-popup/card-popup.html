@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="components/card-popup/card-popup.css">
+<script type="module" src="components/card-popup/card-popup.js"></script>
+
+
+<div id="modal-window" class="modal-window" style="display:none;">
+
+    <div class="popup-complain">
+        <div class="popup-complain__wrapper">
+            <div class="popup-complain__title">
+                Жалоба на пин
+            </div>
+
+            <div class="popup-complain__list">
+                <div class="popup-complain__list-item">
+                    <label for="spam">
+                        <input name="report" id="spam" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="spam" class="popup-complain__list-title">Спам</label>
+                        <label for="spam" class="popup-complain__list-subtitle">Вводящие в заблуждение или повторяющиеся
+                            публикации</label>
+                    </div>
+                </div>
+
+                <div class="popup-complain__list-item">
+                    <label for="nudity">
+                        <input name="report" id="nudity" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="nudity" class="popup-complain__list-title">Изображения обнаженного тела или
+                            порнография</label>
+                        <label for="nudity" class="popup-complain__list-subtitle">Содержимое сексуального
+                            характера</label>
+                    </div>
+                </div>
+
+                <div class="popup-complain__list-item">
+                    <label for="self-harm">
+                        <input name="report" id="self-harm" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="self-harm" class="popup-complain__list-title">Членовредительство</label>
+                        <label for="self-harm" class="popup-complain__list-subtitle">Расстройства пищевого поведения,
+                            нанесение травм себе, суицид</label>
+                    </div>
+                </div>
+
+                <div class="popup-complain__list-item">
+                    <label for="misinformation">
+                        <input name="report" id="misinformation" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="misinformation" class="popup-complain__list-title">Ложная информация</label>
+                        <label for="misinformation" class="popup-complain__list-subtitle">Ложная информация о здоровье
+                            или заговоры</label>
+                    </div>
+                </div>
+
+                <div class="popup-complain__list-item">
+                    <label for="hate-speech">
+                        <input name="report" id="hate-speech" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="hate-speech" class="popup-complain__list-title">Агрессивные действия</label>
+                        <label for="hate-speech" class="popup-complain__list-subtitle">Предрассудки, стереотипы, идея
+                            превосходства белой расы, оскорбления</label>
+                    </div>
+                </div>
+
+                <div class="popup-complain__list-item">
+                    <label for="dangerous-goods">
+                        <input name="report" id="dangerous-goods" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="dangerous-goods" class="popup-complain__list-title">Опасные товары</label>
+                        <label for="dangerous-goods" class="popup-complain__list-subtitle">Наркотики, оружие,
+                            регулируемые товары</label>
+                    </div>
+                </div>
+
+                <div class="popup-complain__list-item">
+                    <label for="attacks">
+                        <input name="report" id="attacks" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="attacks" class="popup-complain__list-title">Преследование или нарушение
+                            конфиденциальности</label>
+                        <label for="attacks" class="popup-complain__list-subtitle">Оскорбления, угрозы, публикация
+                            персональных данных</label>
+                    </div>
+                </div>
+
+
+                <div class="popup-complain__list-item">
+                    <label for="graphic-violence">
+                        <input name="report" id="graphic-violence" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-complain__list-text">
+                        <label for="graphic-violence" class="popup-complain__list-title">Сцены насилия</label>
+                        <label for="graphic-violence" class="popup-complain__list-subtitle">Графическое изображение или
+                            пропаганда насилия</label>
+                    </div>
+                </div>
+
+
+                <div class="popup-complain__list-item">
+                    <label for="intellectual-property">
+                        <input name="report" id="intellectual-property" type="radio" class="popup-complain__list-radio">
+                        <span class="custom-radio"></span>
+                    </label>
+                    <div class="popup-comlpain__list-text">
+                        <label for="intellectual-property" class="popup-complain__list-title">Это моя интеллектуальная
+                            собственность</label>
+                        <label for="intellectual-property" class="popup-complain__list-subtitle">Нарушение авторских
+                            прав или прав на товарный знак</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="popup-complain__button">
+                <button class="popup-complain__close" id="popup-complain__close">Отмена</button>
+                <button class="disabled" id="popup-complain__next">Далее</button>
+            </div>
+        </div>
+    </div>
+
+</div>
