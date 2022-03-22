@@ -2,7 +2,6 @@
 .modal-window-profile {
     display: none;
     position: fixed;
-    /* z-index: 1; */
     left: 0;
     top: 0;
     width: 100%;
@@ -21,10 +20,6 @@
     width: auto;
     height: auto;
     z-index: 20;
-    /* display: flex;
-    align-items: center;
-    flex-direction: column; */
-
 }
 
 
@@ -46,29 +41,11 @@
     padding: 5px 10px;
     background-color: #efefef;
     color: #111010;
-
-        
-  
-    /* background-color: #e60023; */
-    /* color: #efefef; */
 }
 
-/* .disabled {
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 24px;
-    border: none;
-    box-sizing: border-box;
-    min-width: 60px;
-    padding: 15px 20px;
-    color: #efefef;
-    opacity: 0.5;
-    background-color: rgb(148, 143, 143);
-} */
 
 .popup-profile__rename:hover {
     background-color: #55515196;
-    /* background-color: #a5051d; */
 }
 
 .popup-profile__rename:active {
@@ -113,17 +90,20 @@
 
 .board-img {
     border-radius: 25px;
-    /* background-image: url(/components/board-creation/img/4ff1d71e975634e8972ea64dbfa02ba4.jpg);  */
     width: 40px;
     height: 40px;
-    /* background-size: cover; */
     background: center center no-repeat;
 
 }
 
 
 .board-wrapper {
-
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    z-index: 10;
+    margin-top: 10px;
 }
 
 
@@ -141,7 +121,7 @@
     /* background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
-    
+
     background: center center no-repeat;
 }
 
@@ -157,11 +137,9 @@
     margin: 25% auto;
     padding: 20px;
     border-radius: 32px;
-    /* max-width: 30%; */
     width: auto;
     height: 15%;
     z-index: 20;
-    /* display: flex; */
     box-shadow: 0 0 10px rgba(59, 35, 35, 0.5); /* Параметры тени */
 
 }
@@ -235,7 +213,7 @@
 
 
 .board-rename__ok {
-
+    margin-top: 10px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 24px;
@@ -244,10 +222,6 @@
     min-width: 60px;
     padding: 15px 20px;
     color: #efefef;
-
-    /* opacity: 0.5; */
-
-
     background-color: #e60023;
 }
 
@@ -260,32 +234,14 @@
 }
 
 
-
-.imgWrapper{
-
-
-
-    /* height: 90%; */
-  
-    /* grid-template-columns: repeat(auto-fill, 238px); */
-    
-    /* grid-auto-rows: 10px; */
-    /* display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
-    grid-gap: 10px;
-    width: 100%; */
+.imgWrapper {
     margin-top: 15px;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-.imgCard{
-
-    /* margin: 18px 0;
-    max-width: 236px;
-    
+.imgCard {
     position: relative;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
     box-sizing: border-box;
@@ -294,41 +250,29 @@
     break-inside: avoid-column;
     background-size: cover;
     border-radius: 20px;
-    cursor: pointer; */
-    /* display: inline-block; */
-    position: relative;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
-    box-sizing: border-box;
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid-column;
-    background-size: cover;
-    border-radius: 20px;
-    cursor: pointer; 
+    cursor: pointer;
     width: 200px;
     height: 350px;
 
 }
 
-.number-pin{
+.number-pin {
     margin-top: 15px;
     font-size: 20px;
     font-weight: bold;
 }
 
 
+@media screen and (max-width: 1200px) {
 
-
-@media screen and (max-width: 1200px){
-
-    .board-rename{
+    .board-rename {
         top: -15%;
     }
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 750px) {
 
-    .board-rename{
+    .board-rename {
         top: -5%;
         left: 25%;
     }

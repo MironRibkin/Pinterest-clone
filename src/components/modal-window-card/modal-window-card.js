@@ -1,6 +1,5 @@
-import {initListMain} from "../main/main";
-
-import (initListMain)
+import {initList} from "../board-creation/board-creation";
+import (initList)
 
 const card__image = document.getElementsByClassName('card__image');
 const parent = document.querySelector('.parent');
@@ -166,6 +165,7 @@ buttonCancelForm.innerText = 'Отмена';
 
 for (let i = 0; i < iconAnswer.length; i++) {
     iconAnswer[i].addEventListener('click', () => {
+
         buttonCancelForm.style.display = 'block';
         buttonOkForm.style.display = 'block';
 

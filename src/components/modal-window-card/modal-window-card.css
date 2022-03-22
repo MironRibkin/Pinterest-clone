@@ -310,6 +310,7 @@
 }
 
 .icon-likes {
+    cursor: pointer;
     filter: brightness(0) saturate(100%) invert(48%) saturate(136%);
 }
 

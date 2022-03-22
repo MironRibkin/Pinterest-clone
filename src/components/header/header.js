@@ -68,4 +68,37 @@ window.addEventListener('click', (event) => {
         }
 });
 
+// поиск по тегам в инпуте
+export const searchInputTag = () => {
+    let creatDivElCard = document.createElement('div');
+    creatDivElCard.style.display = 'none';
+    switch (Math.round(Math.random() * 8)) {
+        case 0:
+            creatDivElCard.textContent = "доска 1";
+            break;
+        case 1:
+            creatDivElCard.textContent = "доска 2";
+            break;
+        case 2:
+            creatDivElCard.textContent = "доска 3";
+            break;
+        case 3:
+            creatDivElCard.textContent = "доска 4";
+            break;
+        case 4:
+            creatDivElCard.textContent = "доска 5";
+            break;
+        case 5:
+            creatDivElCard.textContent = "доска 6";
+            break;
+        case 6:
+            creatDivElCard.textContent = "доска 7";
+            break;
+        case 7:
+            creatDivElCard.textContent = "доска 8";
+            break;
+        default:
+    }
+    return creatDivElCard;
+}
 

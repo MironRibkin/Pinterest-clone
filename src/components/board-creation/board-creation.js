@@ -133,7 +133,56 @@ const clearInputCreateBoard = () => {
 }
 
 
+let getArrayBoard = () => {
+    const result = localStorage.getItem('board');
+    data = JSON.parse(result);
+    return data;
+}
 
+export const getIdBoard = (event, img) => {
+    let id = event.target.dataset.id;
+    id = id - 1;
+    let data = getArrayBoard(); // выгружаем массив из localStorage
+    let findImg = data[id].img.includes(img)  // ищем URL картинки в массиве
+    // Если не нашли, добавляем в массив и кидаем в localStorage
+    if (findImg === false) {
+
+        data[id].img.push(img);
+        // ===================добавляем массив в localStorage===============
+        const stringified = JSON.stringify(data);
+        localStorage.setItem('board', stringified);
+        // ================================================================
+    }
+
+}
+
+let getData = getArrayBoard(); //забираем массив из localStorage
+export const initList = (item) => {
+    let boards = document.createElement("div")
+    boards.classList.add("dropdown-content")
+    boards.classList.add("toggle-drop")
+    boards.classList.add("show")
+
+    getData.forEach(element => {
+        const divWrapper = document.createElement('div');
+        const divBoard = document.createElement('div');
+        const imgBoard = document.createElement('div');
+        imgBoard.classList.add('board-img');
+        divWrapper.setAttribute('data-id', element.id);
+        divWrapper.classList.add('board-wrapper')
+        divBoard.setAttribute('data-id', element.id);
+        imgBoard.style.background = element.imageLogo;
+        divBoard.append(element.name);
+        divWrapper.append(imgBoard);
+        divWrapper.append(divBoard);
+        divWrapper.addEventListener('click', () => {
+
+        })
+        boards.append(divWrapper);
+        item.append(boards);
+    });
+
+}
 
 
 
