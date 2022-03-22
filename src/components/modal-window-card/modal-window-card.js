@@ -143,7 +143,7 @@ buttonOk.addEventListener('click', () => {
     commentTextUser.classList.add('username-form');
     const commentTextComment = document.createElement('div');
     divCommentsUser.classList.add('comment__text-conteiner-form');
-    commentTextUser.innerText = 'Sacha';
+    commentTextUser.innerText = 'Рабочий класс';
     commentTextComment.innerText = inputComment.value;
     divCommentsUser.append(commentTextUser);
     divCommentsUser.append(commentTextComment);
@@ -259,7 +259,7 @@ let getArrayBoard = () => {
 saveButton.addEventListener('click', () => {
     let boards = document.createElement("div")
     boards.classList.add("dropdown-content")
-    // boards.classList.add("toggle-drop")
+    boards.classList.add("toggle-drop")
     boards.classList.add("show")
     boards.style.display = 'block';
     let data = getArrayBoard();
